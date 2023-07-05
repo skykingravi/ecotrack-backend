@@ -254,6 +254,7 @@ router.get("/waterPollutionForm/data/:secret", async (req, res) => {
 });
 router.get("/airPollutionForm/data/:secret", async (req, res) => {
     const { secret } = req.params;
+    console.log(secret);
     if (secret !== process.env.SECRET) {
         res.json({ message: "You are not Authorized!" });
     } else {
