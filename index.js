@@ -14,9 +14,8 @@ app.use('/forms' , DataRouter);
 app.use('/message' , MessagesRouter);
 
 const PORT = process.env.PORT;
-const STRING_URL = process.env.LEFT_URL + process.env.PASSWORD + process.env.RIGHT_URL;
 
-mongoose.connect(STRING_URL).then(() => console.log("DB Connected !")).catch((err) => console.error(err));
+mongoose.connect(process.env.URL).then(() => console.log("DB Connected !")).catch((err) => console.error(err));
 
 app.listen(PORT, () => {
     console.log(`SERVER STARTED AT PORT - ${PORT}`);
